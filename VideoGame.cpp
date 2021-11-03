@@ -63,7 +63,7 @@ void VideoGame::OrdenarUbY()  // Ordenar por ubicacion en Y
 
 void VideoGame::OrdenarPun()  // Ordenar por puntuación
 {
-    sort(Civilizaciones.begin(), Civilizaciones.end(), [](Civilizacion c1, Civilizacion c2){return c1.getPuntuacion() < c2.getPuntuacion();});
+    sort(Civilizaciones.begin(), Civilizaciones.end(), [](Civilizacion c1, Civilizacion c2){return c1.getPuntuacion() > c2.getPuntuacion();});
 }
 
 void VideoGame::eliminar(const string &nom)  // Eliminar por nombre
@@ -96,6 +96,23 @@ Civilizacion* VideoGame::buscar(const Civilizacion &civ)  // Buscar Civilizacion
 size_t VideoGame::size()   // Total 
 {
     return Civilizaciones.size();
+}
+
+void VideoGame::mostrar()
+{
+    cout << "_______________________________" << endl;
+    cout << left;
+    cout << setw(10) << "Nombre";
+    cout << setw(10) << "Ubicacion en X";
+    cout << setw(10) << "Ubicacion en Y";
+    cout << setw(10) << "Puntuacion";
+    cout << endl;
+    for (size_t i=0; i<Civilizaciones.size(); i++)
+    {
+        Civilizacion &civ = Civilizaciones[i];
+        cout << civ;
+    }
+    cout << "_______________________________" << endl;
 }
 
 
