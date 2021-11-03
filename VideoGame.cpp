@@ -52,7 +52,15 @@ void VideoGame::OrdenarPun()  // Ordenar por puntuación
 
 void VideoGame::eliminar(const string &nom)  // Eliminar por nombre
 {
-    //Civilizaciones.erase();
+    for (auto it = Civilizaciones.begin(); it != Civilizaciones.end(); it++)
+    {
+        Civilizacion &c1 = *it;
+        if (nom == c1.getNombre())
+        {
+            Civilizaciones.erase(it);
+            break;
+        }
+    }
 }
 
 Civilizacion* VideoGame::buscar(const Civilizacion &civ)  // Buscar Civilizacion
