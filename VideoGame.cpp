@@ -5,6 +5,22 @@
 VideoGame::VideoGame()  // Constructor
 {}
 
+VideoGame::VideoGame(const string &nom, const vector<Civilizacion> Civilizaciones)
+{
+    this->Username = nom;
+    this-> Civilizaciones = Civilizaciones;
+}
+
+void VideoGame::setNombre(const string &nom)
+{
+    Username=nom;
+}
+
+string VideoGame::getNombre()
+{
+    return Username;
+}
+
 void VideoGame::AgregarCiv(const Civilizacion &civ)  // Agregar Civilización
 {
     Civilizaciones.push_back(civ);
