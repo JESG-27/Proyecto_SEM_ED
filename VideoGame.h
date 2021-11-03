@@ -25,6 +25,7 @@ public:
     void eliminar(const string &nom);
     Civilizacion* buscar(const Civilizacion &civ);
     size_t size();
+    void mostrar();
 };
 
 
