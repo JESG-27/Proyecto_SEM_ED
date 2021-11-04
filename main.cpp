@@ -48,7 +48,7 @@ int main()
             size_t pos;
             cin >> civ;
             cout << "Posicion: ";
-            cin >> pos;
+            cin >> pos; cin.ignore();
 
             if (pos<VG.size() && pos>=0)
             {
@@ -74,7 +74,7 @@ int main()
         {
             if (VG.size()>0)
             {
-                VG.PrimerCiv();
+                cout << VG.PrimerCiv();
             }
             else
             {
@@ -87,7 +87,7 @@ int main()
         {
             if (VG.size()>0)
             {
-                VG.UltimaCiv();
+                cout << VG.UltimaCiv();
             }
             else
             {
@@ -99,8 +99,9 @@ int main()
         else if (opc == "7")                                    // Ordenar Civilizaciones 
         {
             int opc1;
-            cout << "1) Ordenar por Nombre" << endl << "2) Ordenar por posicion en X" << endl << "3) Ordenar por posicion en Y" << endl << " 4) Ordenar por Puntuacion" << endl;
-            cin >> opc1;
+            cout << "1) Ordenar por Nombre" << endl << "2) Ordenar por posicion en X" << endl << "3) Ordenar por posicion en Y" << endl << "4) Ordenar por Puntuacion" << endl;
+            cout << "Opcion: ";
+            cin >> opc1; cin.ignore();
             switch (opc1)
             {
             case 1: VG.OrdenarNom();
@@ -200,7 +201,7 @@ int main()
         else if (opc == "11")                                    // Resumen
         {
             cout << "Usuario: ";
-            VG.getNombre();
+            cout << VG.getNombre() << endl;
             VG.mostrar();
         }
 
