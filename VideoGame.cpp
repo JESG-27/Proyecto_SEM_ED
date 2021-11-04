@@ -87,7 +87,7 @@ Civilizacion* VideoGame::buscar(const Civilizacion &civ)  // Buscar Civilizacion
     {
         return nullptr;
     }
-    else 
+    else
     {
         return &(*it);
     }
@@ -102,10 +102,10 @@ void VideoGame::mostrar()
 {
     cout << "_______________________________" << endl;
     cout << left;
-    cout << setw(10) << "Nombre";
-    cout << setw(10) << "Ubicacion en X";
-    cout << setw(10) << "Ubicacion en Y";
-    cout << setw(10) << "Puntuacion";
+    cout << setw(20) << "Nombre";
+    cout << setw(20) << "Ubicacion en X";
+    cout << setw(20) << "Ubicacion en Y";
+    cout << setw(20) << "Puntuacion";
     cout << endl;
     for (size_t i=0; i<Civilizaciones.size(); i++)
     {
@@ -114,5 +114,3 @@ void VideoGame::mostrar()
     }
     cout << "_______________________________" << endl;
 }
-
-
