@@ -62,12 +62,12 @@ public:
 
     bool operator<(const Civilizacion &civ)
     {
-        return nombre == civ.nombre;
+        return nombre < civ.nombre;
     }
 
     bool operator<(const Civilizacion &civ) const
     {
-        return nombre == civ.nombre;
+        return nombre < civ.nombre;
     }
 
 };
