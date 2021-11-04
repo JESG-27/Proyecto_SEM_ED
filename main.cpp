@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include "VideoGame.h"
 
 using namespace std;
@@ -6,43 +7,42 @@ using namespace std;
 int main()
 {
     VideoGame VG;
-    char opc;
+    string opc;
 
     while (true)
     {
         cout << "__________ Video Juego __________" << endl;
-        cout << "A) Nombre de Usuario" << endl;
-        cout << "B) Agregar Civilizacion" << endl;
-        cout << "C) Insertar Civilizacion" << endl;
-        cout << "D) Inicializar Civilizaciones" << endl;
-        cout << "E) Mostrar Primera Civilizacion" << endl;
-        cout << "F) Mostrar Ultima Civilizacion" << endl;
-        cout << "G) Ordenar Civilizaciones" << endl;
-        cout << "H) Eliminar Civilizacion" << endl;
-        cout << "I) Buscar Civilizacion" << endl;
-        cout << "J) Modificar Civilizacion" << endl;
-        cout << "K) Resumen" << endl;
-        cout << "I) Salir" << endl;
+        cout << "1) Nombre de Usuario" << endl;
+        cout << "2) Agregar Civilizacion" << endl;
+        cout << "3) Insertar Civilizacion" << endl;
+        cout << "4) Inicializar Civilizaciones" << endl;
+        cout << "5) Mostrar Primera Civilizacion" << endl;
+        cout << "6) Mostrar Ultima Civilizacion" << endl;
+        cout << "7) Ordenar Civilizaciones" << endl;
+        cout << "8) Eliminar Civilizacion" << endl;
+        cout << "9) Buscar Civilizacion" << endl;
+        cout << "10) Modificar Civilizacion" << endl;
+        cout << "11) Resumen" << endl;
+        cout << "12) Salir" << endl;
 
-        cin >> opc; 
-        fflush(stdin);
-        opc = toupper(opc);
+        getline(cin, opc);
 
-        if (opc == 'A')                                       // Opcion 1 nombre de usuario
+        if (opc == "1")                                       // Opcion 1 nombre de usuario
         {
             string nom;
-            getline(cin, nom);
+            cout << "Nombre de usuario: ";
+            getline(cin, nom); cin.ignore();
             VG.setNombre(nom);
         }
 
-        else if (opc == 'B')                                  // Opción 2 Agregar Civilización
+        else if (opc == "2")                                  // Opción 2 Agregar Civilización
         {
             Civilizacion civ;
             cin >> civ;
             VG.AgregarCiv(civ); cin.ignore();
         }
 
-        else if (opc == 'C')                                // Insertar Civilización en una posición
+        else if (opc == "3")                                // Insertar Civilización en una posición
         {
             Civilizacion civ;
             size_t pos;
@@ -60,7 +60,7 @@ int main()
             }
         }
 
-        else if (opc == 'D')                                    // Inicializar Civilizaciones
+        else if (opc == "4")                                    // Inicializar Civilizaciones
         {
             Civilizacion civ;
             size_t num;
@@ -70,7 +70,7 @@ int main()
             VG.inicializar(civ, num);
         }
 
-        else if (opc == 'E')                                    // Primera Civilización
+        else if (opc == "5")                                    // Primera Civilización
         {
             if (VG.size()>0)
             {
@@ -83,7 +83,7 @@ int main()
             }
         }
 
-        else if (opc == 'F')                                    // Ultima Civilización
+        else if (opc == "6")                                    // Ultima Civilización
         {
             if (VG.size()>0)
             {
@@ -96,7 +96,7 @@ int main()
             }
         }
 
-        else if (opc == 'G')                                    // Ordenar Civilizaciones 
+        else if (opc == "7")                                    // Ordenar Civilizaciones 
         {
             int opc1;
             cout << "1) Ordenar por Nombre" << endl << "2) Ordenar por posicion en X" << endl << "3) Ordenar por posicion en Y" << endl << " 4) Ordenar por Puntuacion" << endl;
@@ -116,7 +116,7 @@ int main()
             }
         }
 
-        else if (opc == 'H')                                    // Eliminar Civilización
+        else if (opc == "8")                                    // Eliminar Civilización
         {
             string nom;
             cout << "Nombre: ";
@@ -124,24 +124,87 @@ int main()
             VG.eliminar(nom);
         }
 
-        else if (opc == 'I')                                    // Buscar Civilización
+        else if (opc == "9")                                    // Buscar Civilización
         {
                 Civilizacion search;
-                cin >> search;
-                VG.buscar(search);
+                cin >> search; cin.ignore();
+                Civilizacion *ptr = VG.buscar(search);
+                if (ptr == nullptr)
+                {
+                    cout << "No encontrado" << endl;
+                }
+                else 
+                {
+                    cout << *ptr << endl;
+                }
         }
 
-        else if (opc == 'J')                                    // Modificar una civilización
+        else if (opc == "10")                                    // Modificar una civilización
         {
+            string nomCiv, opc2;
+            Civilizacion search;
             
+            cout << "Civilizacion a modificar"<< endl;
+            cout << "Ingrese el nombre: ";
+            getline(cin, nomCiv);
+            search.setNombre(nomCiv);
+            Civilizacion *ptr = VG.buscar(search);
+            if (ptr == nullptr)
+            {
+                cout << "No existe" << endl;
+            }
+            else
+            {
+                cout << *ptr << endl;
+                cout << "1) Modificar Nombre" << endl;
+                cout << "2) Modificar posicion en X" << endl;
+                cout << "3) Modificar posicion en Y" << endl;
+                cout << "4) Modificar Puntuacion" << endl;
+                getline(cin, opc2);
+
+                if (opc2 == "1")
+                {
+                    string nom;
+                    cout << "Modificar Nombre" << endl;
+                    cout << "Nuevo nombre: ";
+                    getline(cin, nom);
+                    ptr->setNombre(nom);
+                }
+                else if (opc2 == "2")
+                {
+                    float num;
+                    cout << "Modificar Posicion en X" << endl;
+                    cout << "Nueva posicion: ";
+                    cin >> num;
+                    ptr->setUbicacion_x(num);
+                }
+                else if (opc2 == "3")
+                {
+                    float num;
+                    cout << "Modificar Posicion en Y" << endl;
+                    cout << "Nueva posicion: ";
+                    cin >> num;
+                    ptr->setUbicacion_y(num);
+                }
+                else if (opc2 == "4")
+                {
+                    float num;
+                    cout << "Modificar Puntuacion" << endl;
+                    cout << "Nueva puntuacion: ";
+                    cin >> num;
+                    ptr->setPuntuacion(num);
+                }
+            }
         }
 
-        else if (opc == 'K')                                    // Resumen
+        else if (opc == "11")                                    // Resumen
         {
+            cout << "Usuario: ";
+            VG.getNombre();
             VG.mostrar();
         }
 
-        else if (opc == 'L')                                    // Salir
+        else if (opc == "12")                                    // Salir
         {
             break;
         }
