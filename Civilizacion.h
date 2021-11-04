@@ -26,16 +26,16 @@ public:
     friend ostream& operator<<(ostream &out, const Civilizacion &civ)
     {
         out << left;
-        out << setw(10) << civ.nombre;
-        out << setw(10) << civ.ubicacion_x;
-        out << setw(10) << civ.ubicacion_y;
-        out << setw(10) << civ.puntuacion;
+        out << setw(20) << civ.nombre;
+        out << setw(20) << civ.ubicacion_x;
+        out << setw(20) << civ.ubicacion_y;
+        out << setw(20) << civ.puntuacion;
         out << endl;
     }
 
     friend istream& operator>>(istream &in, Civilizacion &civ)
     {
-        cout << "Nombre: ";
+        cout << "Nombre de Civilizacion: ";
         getline(cin, civ.nombre);
 
         cout << "Ubicacion X: ";
@@ -43,9 +43,6 @@ public:
 
         cout << "Ubicacion Y: ";
         cin >>civ.ubicacion_y;
-
-        cout << "Ubicacion Y: ";
-        cin >> civ.ubicacion_y;
 
         cout << "Puntuacion: ";
         cin >> civ.puntuacion;
