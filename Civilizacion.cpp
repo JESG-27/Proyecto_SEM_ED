@@ -40,3 +40,13 @@ float Civilizacion::getUbicacion_y()
 {
     return ubicacion_y;
 }
+
+void Civilizacion::setPuntuacion(const float &civ)
+{
+    puntuacion = civ;
+}
+
+float Civilizacion::getPuntuacion()
+{
+    return puntuacion;
+}
