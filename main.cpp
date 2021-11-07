@@ -24,6 +24,7 @@ int main()
         cout << "10) Modificar Civilizacion" << endl;
         cout << "11) Resumen" << endl;
         cout << "12) Salir" << endl;
+        cout << ":  ";
 
         getline(cin, opc);
 
@@ -33,6 +34,8 @@ int main()
             cout << "Nombre de usuario: ";
             getline(cin, nom); cin.ignore();
             VG.setNombre(nom);
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "2")                                  // Opción 2 Agregar Civilización
@@ -40,6 +43,8 @@ int main()
             Civilizacion civ;
             cin >> civ;
             VG.AgregarCiv(civ); cin.ignore();
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "3")                                // Insertar Civilización en una posición
@@ -58,6 +63,7 @@ int main()
             {
                 cout << "Posicion no valida" << endl;
             }
+            system ("CLS");
         }
 
         else if (opc == "4")                                    // Inicializar Civilizaciones
@@ -68,6 +74,8 @@ int main()
             cout << "Numero de Civilizaciones: ";
             cin >> num;
             VG.inicializar(civ, num);
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "5")                                    // Primera Civilización
@@ -81,6 +89,8 @@ int main()
                 cout << "No hay civilizaciones existentes" << endl;
                 cout << "Intente agregar civilizaciones" << endl; 
             }
+            system("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "6")                                    // Ultima Civilización
@@ -94,6 +104,8 @@ int main()
                 cout << "No hay civilizaciones existentes" << endl;
                 cout << "Intente agregar civilizaciones" << endl; 
             }
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "7")                                    // Ordenar Civilizaciones 
@@ -115,6 +127,8 @@ int main()
             default:
                 break;
             }
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "8")                                    // Eliminar Civilización
@@ -123,6 +137,8 @@ int main()
             cout << "Nombre: ";
             getline(cin, nom); cin.ignore();
             VG.eliminar(nom);
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "9")                                    // Buscar Civilización
@@ -132,12 +148,15 @@ int main()
                 Civilizacion *ptr = VG.buscar(search);
                 if (ptr == nullptr)
                 {
-                    cout << "No encontrado" << endl;
+                    cout << "La busqueda no arrojo resultados" << endl;
                 }
                 else 
                 {
+                    cout << "Resultados no la busqueda: " << endl;
                     cout << *ptr << endl;
                 }
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "10")                                    // Modificar una civilización
@@ -196,6 +215,8 @@ int main()
                     ptr->setPuntuacion(num);
                 }
             }
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "11")                                    // Resumen
@@ -203,6 +224,8 @@ int main()
             cout << "Usuario: ";
             cout << VG.getNombre() << endl;
             VG.mostrar();
+            system ("PAUSE");
+            system ("CLS");
         }
 
         else if (opc == "12")                                    // Salir
