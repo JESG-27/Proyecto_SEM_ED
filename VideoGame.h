@@ -4,14 +4,12 @@
 #include "Civilizacion.h"
 #include "Aldeano.h"
 #include <vector>
-#include <list>
 
 class VideoGame
 {
 private:
     string Username;
     vector<Civilizacion> Civilizaciones;
-    list<Aldeano> aldeanos;
 
 public:
     // Constructores
