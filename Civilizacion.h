@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <list>
 using namespace std;
 
 class Civilizacion
@@ -11,6 +12,8 @@ class Civilizacion
     float ubicacion_x;
     float ubicacion_y;
     float puntuacion;
+    list<Aldeano> aldeanos;
+    
 public:
     Civilizacion();
     Civilizacion(const string &nombre, const float &ubicacion_x, const float &ubicacion_y, const float &puntuacion);
