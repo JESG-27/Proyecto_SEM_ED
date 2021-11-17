@@ -1,8 +1,19 @@
 #include <iostream>
 #include <algorithm>
 #include "VideoGame.h"
+#include "menuAldeano.h"
 
 using namespace std;
+
+void view_format()
+{
+    cout << left;
+    cout << setw(20) << "Nombre";
+    cout << setw(20) << "Ubicacion X";
+    cout << setw(20) << "Ubicacion Y";
+    cout << setw(20) << "Puntuacion";
+    cout << endl;
+}
 
 int main()
 {
@@ -23,7 +34,7 @@ int main()
         cout << "9) Buscar Civilizacion" << endl;
         cout << "10) Modificar Civilizacion" << endl;
         cout << "11) Resumen" << endl;
-        cout << "12) Salir" << endl;
+        cout << "0) Salir" << endl;
         cout << ":  ";
 
         getline(cin, opc);
@@ -82,6 +93,7 @@ int main()
         {
             if (VG.size()>0)
             {
+                view_format();
                 cout << VG.PrimerCiv();
             }
             else
@@ -97,6 +109,7 @@ int main()
         {
             if (VG.size()>0)
             {
+                view_format();
                 cout << VG.UltimaCiv();
             }
             else
@@ -144,7 +157,10 @@ int main()
         else if (opc == "9")                                    // Buscar Civilización
         {
                 Civilizacion search;
-                cin >> search; cin.ignore();
+                string nombre;
+                cout << "Nombre: ";
+                getline (cin, nombre);
+                search.setNombre(nombre);
                 Civilizacion *ptr = VG.buscar(search);
                 if (ptr == nullptr)
                 {
@@ -152,8 +168,10 @@ int main()
                 }
                 else 
                 {
-                    cout << "Resultados no la busqueda: " << endl;
-                    cout << *ptr << endl;
+                    cout << "Resultados de la busqueda: " << endl;
+                    view_format();
+                    cout << *ptr << endl << endl;
+                    menuAldeano(*ptr);
                 }
             system ("PAUSE");
             system ("CLS");
@@ -228,7 +246,7 @@ int main()
             system ("CLS");
         }
 
-        else if (opc == "12")                                    // Salir
+        else if (opc == "0")                                    // Salir
         {
             break;
         }
