@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <list>
+#include "Aldeano.h"
 using namespace std;
 
 class Civilizacion
@@ -15,8 +16,12 @@ class Civilizacion
     list<Aldeano> aldeanos;
     
 public:
+
+    // Constructores
     Civilizacion();
     Civilizacion(const string &nombre, const float &ubicacion_x, const float &ubicacion_y, const float &puntuacion);
+
+    // Métodos de acceso
     void setNombre(const string &civ);
     string getNombre();
     void setUbicacion_x(const float &civ);
@@ -25,6 +30,27 @@ public:
     float getUbicacion_y();
     void setPuntuacion(const float &civ);
     float getPuntuacion();
+
+    // Funciones para Aldeanos
+    //Agregar
+    void agregarFinal(const Aldeano &a);
+    void agregarInicio(const Aldeano &a);
+
+    // Mostrar
+    void print();
+
+    // Eliminar
+    void eliminarNombre(const string &nombre);
+    void elimnarSalud(const float &num);
+    void eliminarEdad();
+
+    // Ordenar
+    void ordenarNombre();
+    void ordenarEdad();
+    void ordenarSalud();
+
+    // Buscar
+    Aldeano* buscarAldeano(const Aldeano &a1);
 
     friend ostream& operator<<(ostream &out, const Civilizacion &civ)
     {
