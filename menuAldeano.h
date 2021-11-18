@@ -138,7 +138,7 @@ void menuAldeano(Civilizacion &civ)
                     cout << setw(15) << "Nombre";
                     cout << setw(15) << "Edad";
                     cout << setw(15) << "Genero";
-                    cout << setw(15) << "Salud";
+                    cout << setw(15) << "Salud" << endl;
                     cout << *ptr << endl << endl;
                 }
         }
