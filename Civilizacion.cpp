@@ -102,7 +102,7 @@ void Civilizacion::ordenarNombre()
 
 void Civilizacion::ordenarEdad()
 {
-    aldeanos.sort([](const Aldeano &a1, const Aldeano &a2){return a1.getEdad() < a2.getEdad();});
+    aldeanos.sort([](const Aldeano &a1, const Aldeano &a2){return a1.getEdad() > a2.getEdad();});
 }
 
 void Civilizacion::ordenarSalud()
