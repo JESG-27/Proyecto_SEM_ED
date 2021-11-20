@@ -42,6 +42,10 @@ public:
     // Buscar
     Civilizacion* buscar(const Civilizacion &civ);
 
+    // Respaldar y Recuperar
+    void respaldar();
+    void recuperar();
+
     size_t size();
 };
 
