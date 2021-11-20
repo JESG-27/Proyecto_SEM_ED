@@ -1,4 +1,5 @@
 #include "Civilizacion.h"
+#include <fstream>
 
 Civilizacion::Civilizacion()
 {}
@@ -125,4 +126,63 @@ Aldeano* Civilizacion::buscarAldeano(const Aldeano &a1)
             return nullptr;
         }
     }
+}
+
+
+// Respaldar
+
+void Civilizacion::respaldar()
+{
+    ofstream archivo(getNombre() + ".txt");
+
+    if (archivo.is_open())
+    {
+        for (auto it = aldeanos.begin(); it != aldeanos.end(); it++)
+        {
+            Aldeano &aldeano = *it;
+            archivo << aldeano.getNombre() << endl;
+            archivo << aldeano.getEdad() << endl;
+            archivo << aldeano.getGenero() << endl;
+            archivo << aldeano.getSalud() << endl;
+        }
+    }
+    archivo.close();
+}
+
+// Recuperar
+void Civilizacion::recuperar()
+{
+    ifstream archivo(getNombre() + ".txt");
+
+    if (archivo.is_open())
+    {
+        string temp;
+        size_t edad;
+        float salud;
+        Aldeano a;
+
+        while (true)
+        {
+            getline (archivo, temp);
+            if (archivo.eof())
+            {
+                break;
+            }
+            a.setNombre(temp);
+
+            getline (archivo, temp);
+            edad = stoi(temp);
+            a.setEdad(edad);
+
+            getline (archivo, temp);
+            a.setGenero(temp);
+
+            getline(archivo, temp);
+            salud = stof(temp);
+            a.setSalud(salud);
+
+            agregarInicio(a);
+        }
+    }
+    archivo.close();
 }
