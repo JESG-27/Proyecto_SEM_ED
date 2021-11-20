@@ -34,6 +34,8 @@ int main()
         cout << "9) Buscar Civilizacion" << endl;
         cout << "10) Modificar Civilizacion" << endl;
         cout << "11) Resumen" << endl;
+        cout << "12) Respaldar" << endl;
+        cout << "13) Rescuperar" << endl;
         cout << "0) Salir" << endl;
         cout << ":  ";
 
@@ -246,11 +248,26 @@ int main()
             system ("CLS");
         }
 
+        else if (opc == "12")                                   // Respaldar
+        {
+            VG.respaldar();
+            cout << "Respaldo Finalizado" << endl;
+            system ("PAUSE");
+            system ("CLS");
+        }
+
+        else if (opc == "13")                                   // Recuperar
+        {
+            VG.recuperar();
+            cout << "Datos Recuperados" << endl;
+            system ("PAUSE");
+            system ("CLS");
+        }
+
         else if (opc == "0")                                    // Salir
         {
             break;
         }
-
     }
     
     return 0;
