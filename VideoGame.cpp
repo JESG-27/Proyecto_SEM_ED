@@ -114,3 +114,48 @@ void VideoGame::mostrar()
     }
     cout << "_______________________________" << endl;
 }
+
+// Respaldar
+void VideoGame::respaldar()
+{
+    ofstream archivo("Civilizaciones.txt");
+    if (archivo.is_open())
+    {
+        for (auto it = Civilizaciones.begin(); it != Civilizaciones.end(); it ++)
+        {
+            Civilizacion &civ = *it;
+            archivo << civ.getNombre() << endl;
+            civ.respaldar();
+        }
+    }
+    archivo.close();
+}
+
+// Recuperar
+void VideoGame::recuperar()
+{
+    ifstream archivo("Civilizaciones.txt");
+
+    if (archivo.is_open())
+    {
+        string nombre;
+        Civilizacion civ;
+
+        while (true)
+        {
+            getline(archivo, nombre);
+            if (archivo.eof())
+            {
+                break;
+            }
+            civ.setNombre(nombre);
+            civ.setUbicacion_x(0);
+            civ.setUbicacion_y(0);
+            civ.setPuntuacion(0);
+
+            civ.recuperar();
+            AgregarCiv(civ);
+        }
+    }
+    archivo.close();
+}
