@@ -52,6 +52,10 @@ public:
     // Buscar
     Aldeano* buscarAldeano(const Aldeano &a1);
 
+    // Respaldar y Recuperar
+    void respaldar();
+    void recuperar();
+
     friend ostream& operator<<(ostream &out, const Civilizacion &civ)
     {
         out << left;
