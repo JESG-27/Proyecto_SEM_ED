@@ -133,7 +133,7 @@ Aldeano* Civilizacion::buscarAldeano(const Aldeano &a1)
 
 void Civilizacion::respaldar()
 {
-    ofstream archivo(getNombre() + ".txt");
+    ofstream archivo(getNombre() + ".txt", ios::out);
 
     if (archivo.is_open())
     {
@@ -152,17 +152,17 @@ void Civilizacion::respaldar()
 // Recuperar
 void Civilizacion::recuperar()
 {
-    ifstream archivo(getNombre() + ".txt");
+    ifstream archivo(getNombre() + ".txt", ios::in);
 
     if (archivo.is_open())
     {
         string temp;
         size_t edad;
         float salud;
-        Aldeano a;
 
         while (true)
         {
+            Aldeano a;
             getline (archivo, temp);
             if (archivo.eof())
             {
