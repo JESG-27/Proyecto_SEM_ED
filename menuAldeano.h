@@ -38,7 +38,7 @@ void menuAldeano(Civilizacion &civ)
         cout << "4) Buscar Aldeano" << endl;
         cout << "5) Modificar Aldeano" << endl;
         cout << "6) Mostar Aldeanos" << endl;
-        cout << "0) Salir" << endl;
+        cout << "0) Salir" << endl << ": ";
         getline(cin, op);
         cout << endl;
 
@@ -47,7 +47,7 @@ void menuAldeano(Civilizacion &civ)
             string opc;
             
             cout << "1) Agregar Inicio" << endl; 
-            cout << "2) Agregar Final" << endl;
+            cout << "2) Agregar Final" << endl << ": ";
             getline (cin, opc);
             cout << endl;
 
@@ -71,7 +71,7 @@ void menuAldeano(Civilizacion &civ)
 
             cout << "1) Eliminar por nombre" << endl;
             cout << "2) Eliminar por Salud < x" << endl;
-            cout << "3) Eliminar por Edad >= 60" << endl;
+            cout << "3) Eliminar por Edad >= 60" << endl << ": ";
             getline(cin, opc1);
             cout << endl;
 
@@ -101,7 +101,7 @@ void menuAldeano(Civilizacion &civ)
 
             cout << "1) Ordenar por Nombre" << endl;
             cout << "2) Ordenar por Edad" << endl;
-            cout << "3) Ordenar por Salud" << endl;
+            cout << "3) Ordenar por Salud" << endl << ": ";
             getline (cin, opc2);
             cout << endl;
 
@@ -213,6 +213,7 @@ void menuAldeano(Civilizacion &civ)
             cout << setw(15) << "Salud";
             cout << endl;
             civ.print();
+            cout << endl;
         }
 
         else if (op == "0")
