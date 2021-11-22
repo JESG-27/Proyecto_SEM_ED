@@ -139,10 +139,10 @@ void VideoGame::recuperar()
     if (archivo.is_open())
     {
         string nombre;
-        Civilizacion civ;
 
         while (true)
         {
+            Civilizacion civ;
             getline(archivo, nombre);
             if (archivo.eof())
             {
