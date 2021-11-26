@@ -2,6 +2,8 @@
 #define BARCO_H
 #include <iostream>
 #include <iomanip>
+#include <stack>
+#include "Guerrero.h"
 
 using namespace std;
 
@@ -11,11 +13,14 @@ class Barco
     float combustible;
     float velocidad;
     float armadura;
+    stack<Guerrero> Guerreros;
 
 public:
+    // Constructores
     Barco(){};
     Barco (const string &id, const float &combustible, const float &velocidad, const float &armadura):id(id), combustible(combustible), velocidad(velocidad), armadura(armadura){}
 
+    // Setter y Getter
     void setId(const string &ID);
     string getId();
     void setCombustible(const float &COMBUSTIBLE);
@@ -24,6 +29,11 @@ public:
     float getVelocidad();
     void setArmadura(const float &ARMADURA);
     float getArmadura();
+
+    // Guerreros
+    void agregarGue(const Guerrero &g);
+    void eliminarGue();
+    Guerrero topGue();
 
     friend ostream &operator<<(ostream &out, const Barco &b)
     {
