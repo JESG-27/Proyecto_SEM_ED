@@ -2,6 +2,7 @@
 #include <algorithm>
 #include "VideoGame.h"
 #include "menuAldeano.h"
+#include "menuBarco.h"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ int main()
         cout << "11) Resumen" << endl;
         cout << "12) Respaldar" << endl;
         cout << "13) Rescuperar" << endl;
+        cout << "14) Barcos" << endl;
         cout << "0) Salir" << endl;
         cout << ":  ";
 
@@ -262,6 +264,13 @@ int main()
             cout << "Datos Recuperados" << endl;
             system ("PAUSE");
             system ("CLS");
+        }
+
+        else if (opc == "14")
+        {
+            menuBarcos(VG);
+            system("PAUSE");
+            system("CLS");
         }
 
         else if (opc == "0")                                    // Salir
