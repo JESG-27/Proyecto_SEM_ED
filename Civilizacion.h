@@ -5,6 +5,8 @@
 #include <iomanip>
 #include <list>
 #include "Aldeano.h"
+#include "Barco.h"
+
 using namespace std;
 
 class Civilizacion
@@ -14,6 +16,7 @@ class Civilizacion
     float ubicacion_y;
     float puntuacion;
     list<Aldeano> aldeanos;
+    list<Barco*> puerto; 
     
 public:
 
@@ -55,6 +58,10 @@ public:
     // Respaldar y Recuperar
     void respaldar();
     void recuperar();
+
+    // Puerto
+    void agregarBarco(Barco *b);
+    void mostrarBarcos();
 
     friend ostream& operator<<(ostream &out, const Civilizacion &civ)
     {
