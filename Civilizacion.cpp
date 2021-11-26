@@ -186,3 +186,24 @@ void Civilizacion::recuperar()
     }
     archivo.close();
 }
+
+// Agregar Barco
+void Civilizacion::agregarBarco(Barco *b)
+{
+    puerto.push_back(b);
+}
+
+// Mostrar Barco
+void Civilizacion::mostrarBarcos()
+{
+    cout << left;
+    cout << setw(15) << "ID";
+    cout << setw(15) << "Combustible";
+    cout << setw(15) << "Velocidad";
+    cout << setw(15) << "Armadura";
+    cout << endl;
+    for (auto it = puerto.begin(); it != puerto.end(); it++)
+    {
+        cout << **it << endl;
+    }
+}
