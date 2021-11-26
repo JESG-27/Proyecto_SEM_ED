@@ -39,3 +39,20 @@ float Barco::getArmadura()
 {
     return armadura;
 }
+
+// Guerreros
+
+void Barco::agregarGue(const Guerrero &g)
+{
+    Guerreros.push(g);
+}
+
+void Barco::eliminarGue()
+{
+    Guerreros.pop();
+}
+
+Guerrero Barco::topGue()
+{
+    return Guerreros.top();
+}
