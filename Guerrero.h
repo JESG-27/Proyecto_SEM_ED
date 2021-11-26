@@ -16,7 +16,7 @@ private:
 
 public:
     Guerrero(){};
-    Guerrero(const string &id, const int &salud, const float &fuerza, const float &escudo, const string &tipo);
+    Guerrero(const string &id, const int &salud, const float &fuerza, const float &escudo, const string &tipo):id(id), salud(salud), fuerza(fuerza), escudo(escudo), tipo(tipo){}
     
     void setId(const string &ID);
     string getId();
