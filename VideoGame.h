@@ -47,6 +47,9 @@ public:
     void recuperar();
 
     size_t size();
+
+    // Barcos
+    void mostrarBarcos();
 };
 
 
