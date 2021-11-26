@@ -159,3 +159,16 @@ void VideoGame::recuperar()
     }
     archivo.close();
 }
+
+// Barcos
+void VideoGame::mostrarBarcos()
+{
+    for (size_t i=0; i<Civilizaciones.size(); i++)
+    {
+        Civilizacion &civ = Civilizaciones[i];
+        cout << "Civilizacion: " << civ.getNombre() << endl;
+        civ.mostrarBarcos();
+        cout << endl << endl;
+    }
+    cout << "_______________________________" << endl;
+}
