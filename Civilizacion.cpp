@@ -204,6 +204,25 @@ void Civilizacion::mostrarBarcos()
     cout << endl;
     for (auto it = puerto.begin(); it != puerto.end(); it++)
     {
-        cout << **it << endl;
+        auto &e = *it;
+        cout << *e << endl;
+        //cout << **it << endl;
+    }
+}
+
+// Buscar Barco
+Barco* Civilizacion::buscarBarco(Barco *b1)
+{
+    for (auto const &e: puerto)
+    {
+        Barco b2 = *e;
+        if (b2.getId() == b1->getId())
+        {
+            return e;
+        }
+        else
+        {
+            return nullptr;
+        }
     }
 }
