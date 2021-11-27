@@ -62,6 +62,7 @@ public:
     // Puerto
     void agregarBarco(Barco *b);
     void mostrarBarcos();
+    Barco* buscarBarco(Barco *b1);
 
     friend ostream& operator<<(ostream &out, const Civilizacion &civ)
     {
