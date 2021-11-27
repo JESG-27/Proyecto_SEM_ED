@@ -34,6 +34,7 @@ public:
     void agregarGue(const Guerrero &g);
     void eliminarGue();
     Guerrero topGue();
+    void mostrarGue();
 
     friend ostream &operator<<(ostream &out, const Barco &b)
     {
