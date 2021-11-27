@@ -56,3 +56,13 @@ Guerrero Barco::topGue()
 {
     return Guerreros.top();
 }
+
+void Barco::mostrarGue()
+{
+    stack<Guerrero> copia(Guerreros);
+    while (!copia.empty())
+    {
+        cout << copia.top() << endl;
+        copia.pop();
+    }
+}
