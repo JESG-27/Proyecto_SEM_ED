@@ -50,6 +50,7 @@ public:
 
     // Barcos
     void mostrarBarcos();
+    void buscarBarcos(Barco *b1);
 };
 
 
