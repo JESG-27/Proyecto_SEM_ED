@@ -59,7 +59,14 @@ void menuBarcos(VideoGame &VG)
 
         else if (op == "3")
         {
+            Barco b1;
+            string ID;
 
+            cout << "Buscar Barco" << endl;
+            cout << "ID: ";
+            getline(cin, ID);
+            b1.setId(ID);
+            VG.buscarBarcos(&b1);
         }
 
         else if (op == "4")
