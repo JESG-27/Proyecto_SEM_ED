@@ -206,7 +206,6 @@ void Civilizacion::mostrarBarcos()
     {
         auto &e = *it;
         cout << *e << endl;
-        //cout << **it << endl;
     }
 }
 
