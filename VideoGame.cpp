@@ -172,3 +172,18 @@ void VideoGame::mostrarBarcos()
     }
     cout << "_______________________________" << endl;
 }
+
+void VideoGame::buscarBarcos(Barco *b1)
+{
+    for (size_t i=0; i<Civilizaciones.size(); i++)
+    {
+        Civilizacion &civ = Civilizaciones[i];
+        if (civ.buscarBarco(b1) != nullptr)
+        {
+            cout << civ.getNombre() << endl;
+            cout << b1->getId() << endl;
+            break;
+        }
+    }
+    cout << "_______________________________" << endl;
+}
