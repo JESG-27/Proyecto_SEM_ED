@@ -63,6 +63,8 @@ public:
     void agregarBarco(Barco *b);
     void mostrarBarcos();
     Barco* buscarBarco(Barco *b1);
+    void eliminarBarco(const string &ID);
+    void eliminarBarco(const float &Com);
 
     friend ostream& operator<<(ostream &out, const Civilizacion &civ)
     {
