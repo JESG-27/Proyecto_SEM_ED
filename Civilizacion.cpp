@@ -214,14 +214,41 @@ Barco* Civilizacion::buscarBarco(Barco *b1)
 {
     for (auto const &e: puerto)
     {
-        Barco b2 = *e;
-        if (b2.getId() == b1->getId())
+        //Barco b2 = *e;
+        if (e->getId() == b1->getId())
         {
             return e;
         }
-        else
-        {
-            return nullptr;
-        }
     }
+    return nullptr;
+}
+
+void Civilizacion::eliminarBarco(const string &ID)
+{
+   puerto.remove_if([ID](Barco *b1){
+       if (b1->getId() == ID)
+       {
+           delete b1;
+           return true;
+       }
+       else
+       {
+           return false;
+       }
+       });
+}
+
+void Civilizacion::eliminarBarco(const float &Com)
+{
+   puerto.remove_if([Com](Barco *b1){
+       if (b1->getCombustible() < Com)
+       {
+           delete b1;
+           return true;
+       }
+       else 
+       {
+           return false;
+       }
+       });
 }
