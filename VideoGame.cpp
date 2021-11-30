@@ -173,35 +173,24 @@ void VideoGame::mostrarBarcos()
     cout << "_______________________________" << endl;
 }
 
-Barco* VideoGame::buscarBarcos(Barco *b1)
+Barco* VideoGame::buscarBarcos(Barco *b1, Civilizacion &civ)
 {
-    for (size_t i=0; i<Civilizaciones.size(); i++)
+    if (civ.buscarBarco(b1) != nullptr)
     {
-        Civilizacion &civ = Civilizaciones[i];
-        if (civ.buscarBarco(b1) != nullptr)
-        {
-            cout << civ.getNombre() << endl;
-            cout << "ID: " << b1->getId() << endl;
-            return civ.buscarBarco(b1);
-        }
+        return civ.buscarBarco(b1);
     }
-    cout << "_______________________________" << endl;
-}
-
-void VideoGame::eliminarBarco(const string &ID)
-{
-    for (size_t i=0; i<Civilizaciones.size(); i++)
+    else
     {
-        Civilizacion &civ = Civilizaciones[i];
-        civ.eliminarBarco(ID);
+        return nullptr;
     }
 }
 
-void VideoGame::eliminarBarco(const float &Com)
+void VideoGame::eliminarBarco(const string &ID, Civilizacion &civ)
 {
-    for (size_t i=0; i<Civilizaciones.size(); i++)
-    {
-        Civilizacion &civ = Civilizaciones[i];
-        civ.eliminarBarco(Com);
-    }
+    civ.eliminarBarco(ID);
+}
+
+void VideoGame::eliminarBarco(const float &Com, Civilizacion &civ)
+{
+    civ.eliminarBarco(Com);
 }
