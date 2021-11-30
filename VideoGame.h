@@ -50,9 +50,9 @@ public:
 
     // Barcos
     void mostrarBarcos();
-    Barco* buscarBarcos(Barco *b1);
-    void eliminarBarco(const string &ID);
-    void eliminarBarco(const float &Com);
+    Barco* buscarBarcos(Barco *b1, Civilizacion &civ);
+    void eliminarBarco(const string &ID, Civilizacion &civ);
+    void eliminarBarco(const float &Com, Civilizacion &civ);
 };
 
 
