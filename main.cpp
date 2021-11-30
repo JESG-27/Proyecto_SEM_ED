@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <cstdlib>
 #include "VideoGame.h"
 #include "menuAldeano.h"
 #include "menuBarco.h"
@@ -266,7 +267,7 @@ int main()
             system ("CLS");
         }
 
-        else if (opc == "14")
+        else if (opc == "14")                                 // Barcos
         {
             menuBarcos(VG);
             system("PAUSE");
