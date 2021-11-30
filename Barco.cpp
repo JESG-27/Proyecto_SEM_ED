@@ -65,4 +65,17 @@ void Barco::mostrarGue()
         cout << copia.top() << endl;
         copia.pop();
     }
+    
+}
+
+bool Barco::empty()
+{
+    if (Guerreros.empty())
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
