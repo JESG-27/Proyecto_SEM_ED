@@ -71,12 +71,4 @@ void Barco::mostrarGue()
 bool Barco::empty()
 {
     return Guerreros.empty();
-    // if (Guerreros.empty())
-    // {
-    //     return true;
-    // }
-    // else
-    // {
-    //     return false;
-    // }
 }
